@@ -1,0 +1,56 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv/
+ENV/
+
+# Uploads
+uploads/*.mp4
+uploads/*.avi
+uploads/*.mov
+uploads/*.mkv
+
+# YOLO models (keep only in detector folder)
+yolov8*.pt
+!detector/yolov8*.pt
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Electron-builder output
+dist-desktop/
+
+# PyInstaller build outputs
+detector/build/
+detector/dist/

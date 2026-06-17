@@ -1,0 +1,29 @@
+# Python Requirements for Queue Detection System
+
+# Core Framework
+fastapi==0.115.5          # Web framework for Python detector API
+uvicorn[standard]==0.32.0 # ASGI server for FastAPI
+python-multipart==0.0.6   # For file uploads
+
+# AI/ML
+ultralytics>=8.3.40       # YOLOv8 for person detection
+numpy>=2.0.0              # Numerical computing
+opencv-python-headless>=4.10.0  # Video processing (headless version for servers)
+
+# Data Models
+pydantic==2.9.2           # Data validation
+
+# Text-to-Speech
+gtts==2.5.4               # Google Text-to-Speech for multi-language audio
+
+# Image Processing
+pillow==11.0.0            # Image manipulation library
+
+# Optional: For GPU acceleration (uncomment if you have CUDA)
+# torch>=2.0.0            # PyTorch with CUDA support
+# torchvision>=0.15.0     # Computer vision models
+
+# Development Tools (optional)
+# pytest>=7.4.0           # Testing framework
+# black>=23.0.0           # Code formatter
+# flake8>=6.0.0           # Linter
