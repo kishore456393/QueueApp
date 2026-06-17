@@ -17,12 +17,21 @@ const pythonCmd = 'python'; // Local python interpreter
 function killSubprocesses() {
   if (nodeProcess) {
     console.log('[Electron] Killing Node server process...');
-    nodeProcess.kill('SIGINT');
+    nodeProcess.kill('SIGTERM');
     nodeProcess = null;
   }
   if (pythonProcess) {
     console.log('[Electron] Killing Python detector process...');
-    pythonProcess.kill('SIGINT');
+    if (isWin) {
+      try {
+        // Windows: recursively kill the process tree to clean up the shell and detector
+        spawn('taskkill', ['/F', '/T', '/PID', pythonProcess.pid]);
+      } catch (err) {
+        console.error('[Electron ERROR] Failed to run taskkill:', err);
+      }
+    } else {
+      pythonProcess.kill('SIGTERM');
+    }
     pythonProcess = null;
   }
 }
